@@ -150,4 +150,14 @@ dmypy.json
 # Cython debug symbols
 cython_debug/
 
-# End of https://mrkandreev.name/snippets/gitignore-generator/#venv,Python
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+*.code-workspace
+
+# Local History for Visual Studio Code
+.history/
+
+# End of https://mrkandreev.name/snippets/gitignore-generator/#venv,Python,VisualStudioCode
