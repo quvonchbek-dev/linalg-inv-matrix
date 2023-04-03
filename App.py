@@ -1,10 +1,10 @@
+import sys
 from PyQt5 import QtWidgets, uic
 from PyQt5.QtWidgets import QMessageBox
-from src import functions
-form, base = uic.loadUiType("src/main.ui")
+import functions as functions
+from ui import Ui_Encode
 
-
-class MyApp(QtWidgets.QMainWindow, form):
+class MyApp(QtWidgets.QMainWindow, Ui_Encode):
     def __init__(self, parent=None):
         super(MyApp, self).__init__(parent)
         self.setupUi(self)
@@ -32,3 +32,9 @@ class MyApp(QtWidgets.QMainWindow, form):
             self.decoded.setText(str(functions.decode(A, key_v)))
         except Exception as ex:
             QMessageBox.warning(self, "Xatolik", "Siz maydonlarni to'g'ri to'ldirmadingiz yoki kodlash matritsasini xato kiritdingiz.")
+
+if __name__ == "__main__":
+    app = QtWidgets.QApplication(sys.argv)
+    window = MyApp()
+    window.show()
+    sys.exit(app.exec_())
